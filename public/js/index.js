@@ -11,8 +11,3 @@ socket.on('disconnect',function() {
 socket.on('newMessage',function(data){
   console.log(data);
 });
-
-socket.emit('createMessage',{
-  from: 'Not MYASS',
-  text: 'Lick my balls'
-});
