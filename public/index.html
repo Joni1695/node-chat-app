@@ -4,15 +4,24 @@
   <head>
     <meta charset="utf-8">
     <title>Chat-App Baby</title>
+    <link rel="stylesheet" href="/css/index.css">
   </head>
-  <body>
-    <h1>Welcome to the chat app.</h1>
-    <form id="myform">
-      <input type="text" name="message" placeholder="Enter a message.">
-      <button>Send</button>
-    </form>
-    <br>
-    <textarea id="messagebox" rows="8" cols="80"></textarea>
+  <body class="chat">
+    <div class="people">
+      <h3>People</h3>
+      <div id="users"></div>
+    </div>
+    <div class="main">
+      <ul class="messages" id="messages"></ul>
+      <div class="footer">
+        <form id="myform">
+          <input type="text" name="message" placeholder="Enter a message.">
+        </form>
+        <button id='submit'>Send</button>
+        <button id="geo"><img width='16' height='16' src='/images/icon.png'></img></button>
+      </div>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery.js"></script>
     <script src="/js/index.js"></script>

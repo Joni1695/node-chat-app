@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const socketIO = require('socket.io');
 const http = require('http');
+const {generateMessage,generateLocation} = require('./utils/message');
 
 // Public path
 const publicPath = path.join(__dirname,'../public');
@@ -15,22 +16,17 @@ var io = socketIO(server);
 
 app.use(express.static(publicPath));
 
+
 // SocketIO Events
 io.on('connection',(socket) => {
-  console.log('New User Connected!');
-
   socket.on('createMessage', (data) => {
-    io.emit('newMessage',{
-      from: data.from,
-      text: data.text,
-      createdAt: new Date().getTime()
-    });
+    io.emit('newMessage',generateMessage(data.from,data.text));
   });
 
-  socket.on('disconnect', () => {
-    console.log('Disconnected User.');
-  });
-})
+  socket.on('createLocation',(coords) => {
+    io.emit('newLocationMessage', generateLocation('USER',coords.lat,coords.lng));
+  })
+});
 
 // Open server on port
 server.listen(port, () => {
