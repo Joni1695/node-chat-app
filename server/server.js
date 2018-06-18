@@ -20,7 +20,7 @@ io.on('connection',(socket) => {
   console.log('New User Connected!');
 
   socket.on('createMessage', (data) => {
-    socket.broadcast.emit('newMessage',{
+    io.emit('newMessage',{
       from: data.from,
       text: data.text,
       createdAt: new Date().getTime()

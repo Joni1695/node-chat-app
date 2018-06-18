@@ -3,11 +3,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Chat-App Baby</title>
   </head>
   <body>
-    <p>Welcome to the chat app.</p>
+    <h1>Welcome to the chat app.</h1>
+    <form id="myform">
+      <input type="text" name="message" placeholder="Enter a message.">
+      <button>Send</button>
+    </form>
+    <br>
+    <textarea id="messagebox" rows="8" cols="80"></textarea>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery.js"></script>
     <script src="/js/index.js"></script>
   </body>
 </html>
