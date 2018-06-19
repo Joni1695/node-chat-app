@@ -6,20 +6,12 @@
     <title>Chat-App Baby</title>
     <link rel="stylesheet" href="/css/index.css">
   </head>
-  <body class="chat">
-    <div class="people">
-      <h3>People</h3>
-      <div id="users"></div>
-    </div>
-    <div class="main">
-      <ul class="messages" id="messages"></ul>
-      <div class="footer">
-        <form id="myform">
-          <input type="text" name="message" placeholder="Enter a message.">
-        </form>
-        <button id='submit'>Send</button>
-        <button id="geo"><img width='16' height='16' src='/images/icon.png'></img></button>
-      </div>
+  <body>
+    <div class="signin">
+      <form class="form1" action="/chat.html">
+        <h3>Sign In</h3>
+        <input type="text" id="username" name="username" placeholder="Enter your Username">
+      </form>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
